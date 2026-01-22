@@ -3,7 +3,7 @@ using System.ComponentModel.DataAnnotations;
 
 namespace OpalToolsTutorial.Web.RolePlayingGame.Character;
 
-public class CharacterParameters
+public class GetCharacterParameters
 {
     [Required]
     [Description("Name of the character")]

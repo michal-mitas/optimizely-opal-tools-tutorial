@@ -31,7 +31,7 @@ public class CharacterTools
 
     [OpalTool(Name = "get-character")]
     [Description("Get's a character details")]
-    public object GetCharacter(CharacterParameters parameters)
+    public object GetCharacter(GetCharacterParameters parameters)
     {
         if (characters.ContainsKey(parameters.Name))
         {            
@@ -47,7 +47,7 @@ public class CharacterTools
 
     [OpalTool(Name = "get-all-characters")]
     [Description("Get's all characters details")]
-    public object GetAllCharacters(CharacterParameters parameters)
+    public object GetAllCharacters(GetAllCharactersParameters parameters)
     {
         return characters.Values.ToList();
     }
