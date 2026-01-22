@@ -39,7 +39,6 @@ jobs:
     runs-on: ubuntu-latest
     needs: build
     permissions:
-      id-token: write #This is required for requesting the JWT
       contents: read #This is required for actions/checkout
 
     steps:
@@ -47,13 +46,6 @@ jobs:
         uses: actions/download-artifact@v4
         with:
           name: .net-app
-      
-      - name: Login to Azure
-        uses: azure/login@v2
-        with:
-          client-id: ${{ secrets.AZUREAPPSERVICE_CLIENTID_BBD63C6D63AC4A07A9C80C6338363A09 }}
-          tenant-id: ${{ secrets.AZUREAPPSERVICE_TENANTID_91D258D6D8C44F6AA7560154CC03BAFC }}
-          subscription-id: ${{ secrets.AZUREAPPSERVICE_SUBSCRIPTIONID_7730287F84DA4E589F99D2A15434BDB3 }}
 
       - name: Deploy to Azure Web App
         id: deploy-to-webapp
@@ -61,5 +53,6 @@ jobs:
         with:
           app-name: 'optimizely-opal-tools-tutorial'
           slot-name: 'Production'
+          publish-profile: ${{ secrets.AZURE_WEBAPP_PUBLISH_PROFILE }}
           package: .
           
