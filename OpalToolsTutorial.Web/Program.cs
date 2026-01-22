@@ -1,5 +1,4 @@
-using OpalToolsTutorial.Web.Sample.Greeting;
-using OpalToolsTutorial.Web.Sample.TodaysDate;
+using OpalToolsTutorial.Web.RolePlayingGame.Character;
 using Optimizely.Opal.Tools;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -10,9 +9,7 @@ builder.Services.AddHttpClient();
 builder.Services.AddOpalToolService();
 
 // Register sample tools
-builder.Services.AddOpalTool<GreetingTool>();
-builder.Services.AddOpalTool<TodaysDateTool>();
-
+builder.Services.AddOpalTool<CharacterTool>();
 
 var app = builder.Build();
 
