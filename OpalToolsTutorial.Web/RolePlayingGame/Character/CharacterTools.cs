@@ -34,7 +34,7 @@ public class CharacterTools
     public object GetCharacter(GetCharacterParameters parameters)
     {
         if (characters.ContainsKey(parameters.Name))
-        {            
+        {
             return characters[parameters.Name];
         }
         else
