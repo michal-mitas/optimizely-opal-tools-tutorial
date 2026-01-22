@@ -3,8 +3,6 @@ using Optimizely.Opal.Tools;
 
 var builder = WebApplication.CreateBuilder(args);
 
-builder.Services.AddHttpClient();
-
 // Add the Opal Tools service
 builder.Services.AddOpalToolService();
 
@@ -18,7 +16,3 @@ app.MapOpalTools();
 
 // Start the app
 app.Run();
-
-// Tool parameter models
-
-// Tool implementations
