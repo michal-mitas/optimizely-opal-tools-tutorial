@@ -3,7 +3,7 @@ using Optimizely.Opal.Tools;
 
 namespace OpalToolsTutorial.Web.RolePlayingGame.Character;
 
-public class CharacterTool
+public class CharacterTools
 {
     [OpalTool(Name = "get-character")]
     [Description("Get's a character details")]
