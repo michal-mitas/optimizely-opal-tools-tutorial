@@ -1,13 +1,13 @@
 using System.ComponentModel;
 using Optimizely.Opal.Tools;
 
-namespace OpalToolsTutorial.Web.RolePlayingGame.Character;
+namespace OpalToolsTutorial.Web.RolePlayingGame;
 
-public class CharacterTools
+public class AdventurerTools
 {
-    [OpalTool(Name = "get-character")]
-    [Description("Get's a character details")]
-    public object GetCharacter(CharacterParameters parameters)
+    [OpalTool(Name = "get-adventurer-details")]
+    [Description("Get's adventurer details based on his name")]
+    public object GetCharacter(AdventurerParameters parameters)
     {
         if (parameters.Name == "Bob")
         {

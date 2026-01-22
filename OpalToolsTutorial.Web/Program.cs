@@ -1,4 +1,4 @@
-using OpalToolsTutorial.Web.RolePlayingGame.Character;
+using OpalToolsTutorial.Web.RolePlayingGame;
 using Optimizely.Opal.Tools;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -7,7 +7,7 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddOpalToolService();
 
 // Register sample tools
-builder.Services.AddOpalTool<CharacterTools>();
+builder.Services.AddOpalTool<AdventurerTools>();
 
 var app = builder.Build();
 
