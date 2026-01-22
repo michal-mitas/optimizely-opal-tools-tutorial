@@ -9,7 +9,7 @@ builder.Services.AddHttpClient();
 builder.Services.AddOpalToolService();
 
 // Register sample tools
-builder.Services.AddOpalTool<CharacterTool>();
+builder.Services.AddOpalTool<CharacterTools>();
 
 var app = builder.Build();
 

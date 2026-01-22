@@ -3,8 +3,18 @@ using Optimizely.Opal.Tools;
 
 namespace OpalToolsTutorial.Web.RolePlayingGame.Character;
 
-public class CharacterTool
+public class CharacterTools
 {
+    private record Character
+    {
+        public required string Name { get; set; }
+        public required string Race { get; set; }
+        public required string Class { get; set; }
+        public required int Level { get; set; }
+        public required int HP { get; set; }
+        public required string[] Inventory { get; set; }
+    }
+    
     private static readonly Dictionary<string, Character> characters = new Dictionary<string, Character>
     {
         { "Bob", new Character { Name = "Bob", Race = "Human", Class = "Warrior", Level = 1, HP = 16, Inventory = new[] { "Sword", "Shield", "Armor" } } },
@@ -18,7 +28,7 @@ public class CharacterTool
         { "Ivy", new Character { Name = "Ivy", Race = "Elf", Class = "Mage", Level = 1, HP = 10, Inventory = new[] { "Book", "Potion", "Wand" } } },
     };
 
-    private static readonly List<Character> characters = new List<Character>
+
     [OpalTool(Name = "get-character")]
     [Description("Get's a character details")]
     public object GetCharacter(CharacterParameters parameters)
@@ -36,8 +46,8 @@ public class CharacterTool
     }
 
     [OpalTool(Name = "get-all-characters")]
-    [Description("Get's a character details")]
-    public object GetCharacter(CharacterParameters parameters)
+    [Description("Get's all characters details")]
+    public object GetAllCharacters(CharacterParameters parameters)
     {
         return characters.Values.ToList();
     }
