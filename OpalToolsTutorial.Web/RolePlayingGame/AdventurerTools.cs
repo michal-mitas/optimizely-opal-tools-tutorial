@@ -1,9 +1,9 @@
 using System.ComponentModel;
 using Optimizely.Opal.Tools;
 
-namespace OpalToolsTutorial.Web.RolePlayingGame.Character;
+namespace OpalToolsTutorial.Web.RolePlayingGame;
 
-public partial class CharacterTools
+public class AdventurerTools
 {
     
     private static readonly Dictionary<string, Character> characters = new Dictionary<string, Character>
@@ -19,10 +19,9 @@ public partial class CharacterTools
         { "Ivy", new Character { Name = "Ivy", Race = "Elf", Class = "Mage", Level = 1, HP = 10, Inventory = new[] { "Book", "Potion", "Wand" } } },
     };
 
-
-    [OpalTool(Name = "get-character")]
-    [Description("Get's a character details")]
-    public object GetCharacter(GetCharacterParameters parameters)
+    [OpalTool(Name = "get-adventurer-details")]
+    [Description("Get's adventurer details based on his name")]
+    public object GetCharacter(AdventurerParameters parameters)
     {
         if (characters.ContainsKey(parameters.Name))
         {
