@@ -6,39 +6,39 @@ namespace OpalToolsTutorial.Web.RolePlayingGame;
 public class AdventurerTools
 {
     
-    private static readonly Dictionary<string, Character> characters = new Dictionary<string, Character>
+    private static readonly Dictionary<string, Adventurer> Adventurers = new Dictionary<string, Adventurer>
     {
-        { "Bob", new Character { Name = "Bob", Race = "Human", Class = "Warrior", Level = 1, HP = 16, Inventory = new[] { "Sword", "Shield", "Armor" } } },
-        { "Alice", new Character { Name = "Alice", Race = "Elf", Class = "Mage", Level = 1, HP = 10, Inventory = new[] { "Book", "Potion", "Wand" } } },
-        { "Charlie", new Character { Name = "Charlie", Race = "Dwarf", Class = "Rogue", Level = 1, HP = 12, Inventory = new[] { "Dagger", "Sword", "Shield" } } },
-        { "Dave", new Character { Name = "Dave", Race = "Gnome", Class = "Priest", Level = 1, HP = 8, Inventory = new[] { "Book", "Potion", "Wand" } } },
-        { "Eve", new Character { Name = "Eve", Race = "Halfling", Class = "Rogue", Level = 1, HP = 14, Inventory = new[] { "Dagger", "Sword", "Shield" } } },
-        { "Frank", new Character { Name = "Frank", Race = "Orc", Class = "Warrior", Level = 1, HP = 18, Inventory = new[] { "Sword", "Shield", "Armor" } } },
-        { "George", new Character { Name = "George", Race = "Troll", Class = "Warrior", Level = 1, HP = 20, Inventory = new[] { "Sword", "Shield", "Armor" } } },
-        { "Harry", new Character { Name = "Harry", Race = "Human", Class = "Warrior", Level = 1, HP = 16, Inventory = new[] { "Sword", "Shield", "Armor" } } },
-        { "Ivy", new Character { Name = "Ivy", Race = "Elf", Class = "Mage", Level = 1, HP = 10, Inventory = new[] { "Book", "Potion", "Wand" } } },
+        { "Bob", new Adventurer { Name = "Bob", Race = "Human", Class = "Warrior", Level = 1, HP = 16, Inventory = new[] { "Sword", "Shield", "Armor" } } },
+        { "Alice", new Adventurer { Name = "Alice", Race = "Elf", Class = "Mage", Level = 1, HP = 10, Inventory = new[] { "Book", "Potion", "Wand" } } },
+        { "Charlie", new Adventurer { Name = "Charlie", Race = "Dwarf", Class = "Rogue", Level = 1, HP = 12, Inventory = new[] { "Dagger", "Sword", "Shield" } } },
+        { "Dave", new Adventurer { Name = "Dave", Race = "Gnome", Class = "Priest", Level = 1, HP = 8, Inventory = new[] { "Book", "Potion", "Wand" } } },
+        { "Eve", new Adventurer { Name = "Eve", Race = "Halfling", Class = "Rogue", Level = 1, HP = 14, Inventory = new[] { "Dagger", "Sword", "Shield" } } },
+        { "Frank", new Adventurer { Name = "Frank", Race = "Orc", Class = "Warrior", Level = 1, HP = 18, Inventory = new[] { "Sword", "Shield", "Armor" } } },
+        { "George", new Adventurer { Name = "George", Race = "Troll", Class = "Warrior", Level = 1, HP = 20, Inventory = new[] { "Sword", "Shield", "Armor" } } },
+        { "Harry", new Adventurer { Name = "Harry", Race = "Human", Class = "Warrior", Level = 1, HP = 16, Inventory = new[] { "Sword", "Shield", "Armor" } } },
+        { "Ivy", new Adventurer { Name = "Ivy", Race = "Elf", Class = "Mage", Level = 1, HP = 10, Inventory = new[] { "Book", "Potion", "Wand" } } },
     };
 
     [OpalTool(Name = "get-adventurer-details")]
     [Description("Get's adventurer details based on his name")]
-    public object GetCharacter(AdventurerParameters parameters)
+    public object GetAdventurer(AdventurerParameters parameters)
     {
-        if (characters.ContainsKey(parameters.Name))
+        if (Adventurers.ContainsKey(parameters.Name))
         {
-            return characters[parameters.Name];
+            return Adventurers[parameters.Name];
         }
         else
         {
             return new {
-                error = "Character not found"
+                error = "Adventurer not found"
             };
         }
     }
 
-    [OpalTool(Name = "get-all-characters")]
-    [Description("Get's all characters details")]
-    public object GetAllCharacters(GetAllCharactersParameters parameters)
+    [OpalTool(Name = "get-all-adventurers")]
+    [Description("Get's all Adventurers details")]
+    public object GetAllAdventurers(GetAllAdventurersParameters parameters)
     {
-        return characters.Values.ToList();
+        return Adventurers.Values.ToList();
     }
 }
