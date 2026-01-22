@@ -41,4 +41,12 @@ public class AdventurerTools
     {
         return Adventurers.Values.ToList();
     }
+
+    [OpalTool(Name = "hire-adventurers")]
+    [Description("Hires adventurers and assigns them on a quest")]
+    [OpalAuthorization("OptiId", "cms", true)]
+    public object HireAdventurers(HireAdventurersParameters parameters)
+    {
+        return "Those adventurers have been hired by " + parameters.GuildClientName + ": " + string.Join(", ", parameters.AdventurerNames);
+    }
 }
