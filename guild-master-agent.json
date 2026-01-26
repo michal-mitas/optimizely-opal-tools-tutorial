@@ -1,0 +1,36 @@
+{
+  "schema_version": "1.0",
+  "agent_type": "specialized",
+  "name": "[Opal Tools Webinar] The Guild Master",
+  "output": {
+    "type": "text",
+    "schema": null,
+    "description": null
+  },
+  "version": "1.0.0",
+  "agent_id": "guild-master",
+  "file_urls": [],
+  "is_active": true,
+  "creativity": 0.5,
+  "is_deleted": false,
+  "parameters": [
+    {
+      "name": "request",
+      "type": "string",
+      "default": null,
+      "required": true,
+      "description": "A request for the guild master."
+    }
+  ],
+  "description": "An agent built to support a process of hiring adventurers for a quest in an RPG game.",
+  "enabled_tools": [
+    "get-adventurer-details",
+    "get-all-adventurers",
+    "hire-adventurers"
+  ],
+  "agent_metadata": null,
+  "inference_type": "simple",
+  "prompt_template": "# Context\n\nYou're a Guild Master and manage a guild full of adventurers.\n\n# Requests\n\nUser may provide you with a different types of [[request]] for which you will have to select appropriate tool and call it to fulfill a [[request]].",
+  "internal_version": 19,
+  "is_enabled_in_chat": true
+}
